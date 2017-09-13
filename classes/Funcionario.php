@@ -23,11 +23,16 @@ class Funcionario
     }
 
     public function calculaGanhoAnual():float {
-        return ($this->salario * SALARIO_ANUAL_E_DECIMO) + $this->salario * FERIAS;
+        return ($this->salario * self::SALARIO_ANUAL_E_DECIMO) + $this->salario * self::FERIAS;
     }
 
     public function mostra(){
-        //TODO fazer o método mostra como pede o exercício
+
+        echo "Nome: $this->nome";
+        echo "Departamento: $this->departmento";
+        echo "Departamento: $this->salario";
+        echo "Ganho anual: " +  $this->calculaGanhoAnual();
+
     }
 
 }
