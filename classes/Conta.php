@@ -8,11 +8,25 @@
  */
 class Conta
 {
+    static private $totalContas = 0;
     public $numero;
     private $saldo = 0;
     private $dono;
     public $senha;
 
+    function __construct() {
+        self::$totalContas++;
+    }
+
+    function __destruct()
+    {
+        self::$totalContas--;
+    }
+
+    public static function getTotalContas(): int
+    {
+        return self::$totalContas;
+    }
 
     public function getDono()
     {
